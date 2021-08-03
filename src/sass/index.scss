@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+@import "abstracts/abstracts";
+@import "abstracts/mediaqueries";
+@import "abstracts/mixins";
+
+@import "base/base";
+
+@import "components/slide";
+@import "components/slider";
+@import "components/home-artist";
+@import "components/home-gallery";
+@import "components/news-section";
+
+@import "layout/footer";
+
+@import "pages/home-page";
+
+@import "typography/fonts";
+@import "utils/utils";

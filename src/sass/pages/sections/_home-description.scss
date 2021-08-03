@@ -1,0 +1,36 @@
+.home-description {
+  padding: 6rem 0;
+
+  &__title {
+    margin-bottom: 2rem;
+    font-family: "Greycliff", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+
+  &__text {
+    font-size: 2rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-container {
+    width: 65%;
+  }
+
+  &__image {
+    width: 35rem;
+    height: min-content;
+  }
+
+  &__btn {
+    background-color: $color-secondary;
+    color: $white;
+    padding: 1.5rem 3.5rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+  }
+}

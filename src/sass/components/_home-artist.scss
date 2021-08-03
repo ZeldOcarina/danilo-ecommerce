@@ -1,0 +1,29 @@
+.home-artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  text-align: center;
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text-container {
+    margin-bottom: 50%;
+    transform: translateY(50%);
+  }
+
+  &__description {
+    font-size: 4rem;
+    font-style: italic;
+  }
+
+  &__btn {
+    padding: 2.5rem 6rem;
+    width: max-content;
+  }
+}

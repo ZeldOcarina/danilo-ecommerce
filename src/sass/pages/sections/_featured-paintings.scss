@@ -1,0 +1,16 @@
+.featured-paintings {
+  background-color: #000000;
+  z-index: 99;
+  overflow: visible;
+  position: relative;
+  height: 60vh;
+
+  &__drawing {
+    position: relative;
+    transform: translateY(-30%);
+    //width: 35%;
+    z-index: 10;
+    overflow: visible;
+    width: 40%;
+  }
+}

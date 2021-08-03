@@ -1,0 +1,36 @@
+.home-gallery {
+  position: relative;
+  height: 105vh;
+  display: flex;
+  justify-content: center;
+  padding: 10rem 0 20rem 0;
+
+  &__btns-container {
+    position: absolute;
+    bottom: 10rem;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    border: 1px solid $white;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $white;
+      border-radius: 1px solid grey;
+      color: $black !important;
+    }
+  }
+}

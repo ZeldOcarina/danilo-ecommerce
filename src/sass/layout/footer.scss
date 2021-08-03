@@ -1,0 +1,22 @@
+.footer {
+  padding: 5rem 0;
+  background-color: $color-secondary;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 30rem;
+  }
+
+  &__copy {
+    display: block;
+    font-size: 2rem;
+  }
+}

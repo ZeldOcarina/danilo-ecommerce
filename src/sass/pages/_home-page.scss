@@ -1,0 +1,20 @@
+@import "./sections/hero";
+@import "./sections/featured-paintings";
+@import "./sections/home-gallery";
+@import "./sections/home-description";
+
+.home-square {
+  background-color: $white;
+  width: 50%;
+  height: auto;
+
+  &--artist {
+    background-image: linear-gradient(
+        rgba($color-secondary, 0.8),
+        rgba($color-secondary, 0.8)
+      ),
+      url("../../images/quadrato-the-artist.png");
+    background-size: cover;
+    background-position: center;
+  }
+}

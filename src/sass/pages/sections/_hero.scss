@@ -1,0 +1,10 @@
+.hero {
+  background-image: url("../../../images/hero.png");
+  height: 50vh;
+  background-size: cover;
+  background-position: top;
+
+  &__logo {
+    margin-top: 7%;
+  }
+}

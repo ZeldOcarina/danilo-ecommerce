@@ -1,0 +1,53 @@
+.slide {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: min-content;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+
+  &__components {
+    // position: absolute;
+    // top: 5rem;
+    // right: 0;
+    margin-left: 6rem;
+    margin-top: 5rem;
+  }
+
+  &__button {
+    font-size: 1.6rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__description {
+    font-size: 1.6rem;
+  }
+
+  &__btn {
+    padding: 2rem 4rem;
+    background-color: $color-secondary;
+  }
+}
+
+.bottom-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+
+  &__image {
+    width: 30rem;
+  }
+
+  &__buy {
+    padding: 2rem 5rem;
+  }
+}

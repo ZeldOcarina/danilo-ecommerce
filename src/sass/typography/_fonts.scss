@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap&family=Sarabun:wght@300");
+
+$BASE_URL: "../../fonts/greycliff-cf/";
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url($BASE_URL + "GreycliffCF-Bold.eot");
+  src: local("Greycliff CF Bold"), local("GreycliffCF-Bold"),
+    url($BASE_URL + "GreycliffCF-Bold.eot?#iefix") format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-Bold.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-Bold.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF Medium Oblique";
+  src: url($BASE_URL + "GreycliffCF-MediumOblique.eot");
+  src: local("Greycliff CF Medium Oblique"), local("GreycliffCF-MediumOblique"),
+    url($BASE_URL + "GreycliffCF-MediumOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-MediumOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-MediumOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-MediumOblique.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url($BASE_URL + "GreycliffCF-Light.eot");
+  src: local("Greycliff CF Light"), local("GreycliffCF-Light"),
+    url($BASE_URL + "GreycliffCF-Light.eot?#iefix") format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-Light.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-Light.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url($BASE_URL + "GreycliffCF-Heavy.eot");
+  src: local("Greycliff CF Heavy"), local("GreycliffCF-Heavy"),
+    url($BASE_URL + "GreycliffCF-Heavy.eot?#iefix") format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-Heavy.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-Heavy.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF Extra Light Oblique";
+  src: url($BASE_URL + "GreycliffCF-ExtraLightOblique.eot");
+  src: local("Greycliff CF Extra Light Oblique"),
+    local("GreycliffCF-ExtraLightOblique"),
+    url($BASE_URL + "GreycliffCF-ExtraLightOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-ExtraLightOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-ExtraLightOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-ExtraLightOblique.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Greycliff CF Extra Bold Oblique";
+  src: url($BASE_URL + "GreycliffCF-ExtraBoldOblique.eot");
+  src: local("Greycliff CF Extra Bold Oblique"),
+    local("GreycliffCF-ExtraBoldOblique"),
+    url($BASE_URL + "GreycliffCF-ExtraBoldOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-ExtraBoldOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-ExtraBoldOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-ExtraBoldOblique.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Greycliff CF Extra";
+  src: url($BASE_URL + "GreycliffCF-ExtraLight.eot");
+  src: local("Greycliff CF Extra Light"), local("GreycliffCF-ExtraLight"),
+    url($BASE_URL + "GreycliffCF-ExtraLight.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-ExtraLight.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-ExtraLight.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF Extra";
+  src: url($BASE_URL + "GreycliffCF-ExtraBold.eot");
+  src: local("Greycliff CF Extra Bold"), local("GreycliffCF-ExtraBold"),
+    url($BASE_URL + "GreycliffCF-ExtraBold.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-ExtraBold.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-ExtraBold.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF Bold Oblique";
+  src: url($BASE_URL + "GreycliffCF-BoldOblique.eot");
+  src: local("Greycliff CF Bold Oblique"), local("GreycliffCF-BoldOblique"),
+    url($BASE_URL + "GreycliffCF-BoldOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-BoldOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-BoldOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-BoldOblique.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Greycliff CF Light Oblique";
+  src: url($BASE_URL + "GreycliffCF-LightOblique.eot");
+  src: local("Greycliff CF Light Oblique"), local("GreycliffCF-LightOblique"),
+    url($BASE_URL + "GreycliffCF-LightOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-LightOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-LightOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-LightOblique.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Greycliff CF Heavy Oblique";
+  src: url($BASE_URL + "GreycliffCF-HeavyOblique.eot");
+  src: local("Greycliff CF Heavy Oblique"), local("GreycliffCF-HeavyOblique"),
+    url($BASE_URL + "GreycliffCF-HeavyOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-HeavyOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-HeavyOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-HeavyOblique.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Greycliff CF Demi Bold Oblique";
+  src: url($BASE_URL + "GreycliffCF-DemiBoldOblique.eot");
+  src: local("Greycliff CF Demi Bold Oblique"),
+    local("GreycliffCF-DemiBoldOblique"),
+    url($BASE_URL + "GreycliffCF-DemiBoldOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-DemiBoldOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-DemiBoldOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-DemiBoldOblique.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Greycliff CF Demi";
+  src: url($BASE_URL + "GreycliffCF-DemiBold.eot");
+  src: local("Greycliff CF Demi Bold"), local("GreycliffCF-DemiBold"),
+    url($BASE_URL + "GreycliffCF-DemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-DemiBold.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-DemiBold.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-DemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url($BASE_URL + "GreycliffCF-Thin.eot");
+  src: local("Greycliff CF Thin"), local("GreycliffCF-Thin"),
+    url($BASE_URL + "GreycliffCF-Thin.eot?#iefix") format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-Thin.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-Thin.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url($BASE_URL + "GreycliffCF-Medium.eot");
+  src: local("Greycliff CF Medium"), local("GreycliffCF-Medium"),
+    url($BASE_URL + "GreycliffCF-Medium.eot?#iefix") format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-Medium.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-Medium.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF Thin Oblique";
+  src: url($BASE_URL + "GreycliffCF-ThinOblique.eot");
+  src: local("Greycliff CF Thin Oblique"), local("GreycliffCF-ThinOblique"),
+    url($BASE_URL + "GreycliffCF-ThinOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-ThinOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-ThinOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-ThinOblique.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url($BASE_URL + "GreycliffCF-Regular.eot");
+  src: local("Greycliff CF"), local("GreycliffCF-Regular"),
+    url($BASE_URL + "GreycliffCF-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-Regular.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-Regular.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Greycliff CF Oblique";
+  src: url($BASE_URL + "GreycliffCF-RegularOblique.eot");
+  src: local("Greycliff CF Oblique"), local("GreycliffCF-RegularOblique"),
+    url($BASE_URL + "GreycliffCF-RegularOblique.eot?#iefix")
+      format("embedded-opentype"),
+    url($BASE_URL + "GreycliffCF-RegularOblique.woff2") format("woff2"),
+    url($BASE_URL + "GreycliffCF-RegularOblique.woff") format("woff"),
+    url($BASE_URL + "GreycliffCF-RegularOblique.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
