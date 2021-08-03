@@ -1,10 +1,19 @@
-.home-description {
-  padding: 6rem 0;
+.text-and-image {
+  padding: 10rem 0;
+
+  &--about {
+    color: white;
+    background-color: $black;
+
+    .text-and-image__title {
+      color: $white;
+    }
+  }
 
   &__title {
     margin-bottom: 2rem;
     font-family: "Greycliff", sans-serif;
-    font-size: 3rem;
+    font-size: 3.3rem;
     font-weight: 400;
   }
 

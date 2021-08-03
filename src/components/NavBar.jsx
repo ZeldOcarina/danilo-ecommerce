@@ -10,7 +10,7 @@ function NavBar({ className, type }) {
     <nav
       className={`navbar${className && " " + className}`}
       style={{
-        backgroundImage: type === "home-page" ? `url(${navbarBg})` : "",
+        backgroundImage: type === "home-page" ? "" : `url(${navbarBg})`,
       }}
     >
       <div className="container navbar__container">

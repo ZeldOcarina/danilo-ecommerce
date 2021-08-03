@@ -13,7 +13,7 @@ class HomeGallery extends Component {
     this.carousel.slider = React.createRef(null);
 
     this.carousel.slidesData = slides;
-    this.carousel.maxSlide = slides.length;
+    this.carousel.maxSlide = slides?.length;
     this.state = {
       slides: [],
     };
@@ -24,7 +24,7 @@ class HomeGallery extends Component {
   }
 
   buildSlides() {
-    return this.carousel.slidesData.map(
+    return this.carousel.slidesData?.map(
       ({ image, title, description, url }, i) => {
         const slideEl = (
           <HomeBottomSlide

@@ -1,6 +1,10 @@
 import placeholderPainting from "../images/placeholder-drawing.png";
 import imageTwo from "../images/image-2.png";
 
+import galleryOne from "../images/gallery/gallery-1.png";
+import galleryTwo from "../images/gallery/gallery-2.jpg";
+import galleryThree from "../images/gallery/gallery-3.jpg";
+
 export const slides = [
     {
       image: placeholderPainting,
@@ -61,4 +65,19 @@ export const news = [
         date: new Date("2021-05-19"),
         title: "Danilo D'Ignazio inaugura una mostra personale in Italia"
     }
+]
+
+export const gallery = [
+  {
+    title: "Artsy",
+    image: galleryOne
+  },
+  {
+    title: "Facebook",
+    image: galleryTwo
+  },
+  {
+    title: "Instagram",
+    image: galleryThree
+  }
 ]

@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function TheArtist({ reference, height }) {
-  console.log(reference);
   return (
     <div
       className="home-square home-square--artist home-artist text-white"

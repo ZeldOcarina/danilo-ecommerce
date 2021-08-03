@@ -1,0 +1,112 @@
+.footer {
+  padding: 6rem 0;
+  font-weight: 500;
+
+  &__container {
+    @include container(0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(phone-port) {
+      width: 90%;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    margin-bottom: 3rem;
+  }
+
+  &__icon {
+    width: 3rem;
+
+    &--instagram {
+      width: 4.5rem;
+    }
+
+    &--facebook {
+      width: 1.5rem;
+    }
+
+    &--youtube {
+      width: 3rem;
+    }
+    &--linkedin {
+      width: 2.5rem;
+    }
+  }
+
+  &__icon-container {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(#546ce9, 0.1);
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__contacts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.8rem;
+
+    @include respond(phone-land) {
+    }
+    @include respond(phone-port) {
+      font-size: 1.5rem;
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    &__icon {
+      width: 2rem;
+      margin-right: 2rem;
+
+      @include respond(phone-port) {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    margin: 3rem 0;
+
+    @include respond(phone-port) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__privacy {
+  }
+
+  &__disclaimer {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 2rem;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
