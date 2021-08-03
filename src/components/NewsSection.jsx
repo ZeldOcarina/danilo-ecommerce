@@ -1,6 +1,8 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
+import { Link } from "react-router-dom";
+
 import { news } from "../content/fake-db";
 
 import { parseItalianMonth } from "../utils/utils";
@@ -25,12 +27,12 @@ function NewsSection({ reference, height }) {
             </div>
           );
         })}
-        <a
-          href="/news"
+        <Link
+          to="/news"
           className="btn home-artist__btn news-section__btn text-uppercase text-dark btn-lg mt-3"
         >
           VIEW ALL
-        </a>
+        </Link>
       </div>
     </div>
   );

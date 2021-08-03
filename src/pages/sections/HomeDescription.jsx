@@ -2,6 +2,8 @@ import React from "react";
 
 import homeDescriptionImage from "../../images/home-description-image.png";
 
+import { Link } from "react-router-dom";
+
 function HomeDescription() {
   return (
     <section className="home-description">
@@ -35,9 +37,9 @@ function HomeDescription() {
             Le sue opere sono presenti in collezioni private in Italia, Francia
             e Giappone.
           </p>
-          <a href="/" className="btn btn-lg home-description__btn">
+          <Link to="/about" className="btn btn-lg home-description__btn">
             Scopri di pi&ugrave;
-          </a>
+          </Link>
         </div>
         <img
           src={homeDescriptionImage}

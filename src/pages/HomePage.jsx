@@ -10,7 +10,7 @@ import { slides } from "../content/fake-db";
 
 function HomePage() {
   return (
-    <main className="home-page">
+    <main className="home-page" type="home-page">
       <Hero />
       <FeaturedPaintings slides={slides} />
       <HomeAbout />

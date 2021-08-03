@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 function TheArtist({ reference, height }) {
   console.log(reference);
   return (
@@ -17,12 +19,12 @@ function TheArtist({ reference, height }) {
           artistico utilizzando una street-pop art
         </p>
 
-        <a
-          href="/about"
+        <Link
+          to="/about"
           className="btn home-artist__btn text-uppercase text-dark btn-light btn-lg mt-3"
         >
           Read More
-        </a>
+        </Link>
       </div>
     </div>
   );

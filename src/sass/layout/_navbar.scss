@@ -1,0 +1,44 @@
+.navbar {
+  background-size: cover;
+  padding: 4rem 0;
+
+  &--home {
+    position: absolute;
+    right: 30rem;
+
+    .navbar__logo {
+      display: none;
+    }
+
+    .navbar__menu {
+      position: relative;
+      right: 0;
+      top: 0;
+      margin-left: auto;
+    }
+  }
+
+  &__logo {
+    width: 30rem;
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 2rem;
+
+    &--active {
+      font-weight: 700;
+    }
+  }
+}
