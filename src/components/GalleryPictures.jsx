@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import { parsePrice } from "../utils/utils";
 
@@ -41,7 +42,7 @@ function GalleryPictures({ slides: pictures }) {
     <section class="gallery-pictures">
       <div className="container gallery-pictures__container">
         {pictures.map((picture) => (
-          <GalleryPicture picture={picture} />
+          <GalleryPicture picture={picture} key={uuidv4()} />
         ))}
       </div>
     </section>

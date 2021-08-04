@@ -6,17 +6,18 @@ import NewsPost from "../components/NewsPost";
 import { AppContext } from "../App";
 
 function NewsPage() {
-  const {
-    appData: { news },
-  } = useContext(AppContext);
+  const { news } = useContext(AppContext);
 
   return (
     <main className="news-page">
       <div className="container news-page__container">
-        {news.map((newsPost) => {
-          console.log(newsPost);
-          return <NewsPost {...newsPost} key={uuidv4()} />;
-        })}
+        {news ? (
+          news.map((newsPost) => {
+            return <NewsPost newsPost={newsPost} key={uuidv4()} />;
+          })
+        ) : (
+          <h1>Loading</h1>
+        )}
       </div>
     </main>
   );

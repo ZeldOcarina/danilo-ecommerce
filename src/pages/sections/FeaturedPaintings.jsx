@@ -6,9 +6,6 @@ import Carousel from "../../utils/Carousel";
 class FeaturedPaintings extends React.Component {
   constructor({ slides }) {
     super();
-    /*this.btnsLeft = slider.querySelectorAll(".slider__btn--left");
-    this.btnsRight = slider.querySelectorAll(".slider__btn--right");
-    this.dotContainer = slider.querySelector(".dots");*/
     this.carousel = new Carousel({ transformAmount: 120 });
     this.carousel.slider = React.createRef(null);
 
