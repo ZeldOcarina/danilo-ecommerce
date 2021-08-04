@@ -11,6 +11,7 @@
 @import "components/slider";
 @import "components/home-artist";
 @import "components/home-gallery";
+@import "components/news-post";
 @import "components/news-section";
 @import "components/text-and-image";
 
@@ -18,6 +19,8 @@
 @import "layout/navbar";
 
 @import "pages/home-page";
+@import "pages/gallery-page";
+@import "pages/news-page";
 
 @import "typography/fonts";
 @import "utils/utils";

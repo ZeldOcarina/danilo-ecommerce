@@ -1,0 +1,49 @@
+.gallery-pictures {
+  padding: 10rem 0;
+  &__container {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+}
+
+.picture {
+  width: calc(33% - 4rem);
+  font-size: 2rem;
+
+  &__image-container {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    &--sold {
+      filter: brightness(0.2);
+    }
+  }
+
+  &__sold {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+  }
+
+  &__title {
+    color: white;
+    font-family: "Greycliff CF", sans-serif;
+    font-weight: 400;
+    font-size: 2.8rem;
+  }
+
+  &__price {
+    margin: 2rem 0;
+  }
+
+  &__btn {
+    padding: 2rem 4rem;
+  }
+}

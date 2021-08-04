@@ -28,3 +28,12 @@ export const parseItalianMonth = function(month) {
             throw new Error("Invalid date");
     }
 }
+
+export const parsePrice = function (price) {
+    const stringPrice = JSON.stringify(price);
+    const afterPoint = stringPrice.split(".")[1];
+    const numAfterPoint = Number(afterPoint);
+
+    if (numAfterPoint > 9) return `€ ${stringPrice.replace(".", ",")}`;
+    return `€ ${stringPrice}0`.replace(".", ",");
+  }
