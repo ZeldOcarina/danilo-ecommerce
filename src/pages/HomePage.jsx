@@ -8,6 +8,7 @@ import TextAndImage from "./sections/TextAndImage";
 import Gallery from "../components/Gallery";
 
 import { AppContext } from "../App";
+import { ShopContext } from "../context/ShopContext";
 
 import appContent from "../content/content";
 
@@ -20,10 +21,12 @@ function HomePage() {
     appData: { slides },
   } = useContext(AppContext);
 
+  const { products } = useContext(ShopContext);
+
   return (
     <main className="home-page" type="home-page">
       <Hero />
-      <FeaturedPaintings slides={slides} />
+      <FeaturedPaintings slides={products} />
       <HomeAbout />
       <HomeGallery slides={slides} />
       <TextAndImage {...{ aboutPage: false, title, content, image }} />

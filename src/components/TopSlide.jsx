@@ -1,12 +1,17 @@
 import React from "react";
 
+import { parsePrice } from "../utils/utils";
+
 function TopSlide({
   image,
   title,
   description,
   url,
+  price,
+  productId,
   handleLeftClick,
   handleRightClick,
+  addItemToCheckout,
 }) {
   return (
     <div className="slide">
@@ -35,6 +40,13 @@ function TopSlide({
           className="slide__description text-white"
           dangerouslySetInnerHTML={{ __html: description }}
         ></p>
+        <p className="slide__description text-white">{parsePrice(price)}</p>
+        <button
+          className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1"
+          onClick={() => addItemToCheckout(productId, 1)}
+        >
+          ADD TO CART
+        </button>
         <a href={url} className="slide__btn btn btn-primary btn-lg mt-1">
           BUY NOW
         </a>

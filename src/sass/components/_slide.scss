@@ -34,6 +34,19 @@
   &__btn {
     padding: 2rem 4rem;
     background-color: $color-secondary;
+    letter-spacing: inherit;
+
+    &--outline {
+      background-color: transparent;
+      border: 1px solid $white;
+      color: $white;
+      margin-right: 2rem;
+
+      &:hover {
+        color: $black;
+        background-color: $white;
+      }
+    }
   }
 }
 

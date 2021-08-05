@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 import { Route, Switch, useLocation } from "react-router-dom";
@@ -9,16 +9,21 @@ import About from "./pages/About";
 import GalleryPage from "./pages/GalleryPage";
 import NewsPage from "./pages/NewsPage";
 import Footer from "./components/Footer";
+import Cart from "./components/Cart";
 
-import { slides, gallery } from "./content/fake-db";
+import { ShopContext } from './context/ShopContext';
+
+import { slides } from "./content/fake-db";
 
 export const AppContext = React.createContext({});
 
 function App() {
-  const [appData, setAppData] = useState({ slides, gallery });
+  const [appData, setAppData] = useState({ slides });
   const [news, setNews] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
   const location = useLocation();
+
+  const { fetchAllProducts } = useContext(ShopContext);
 
   useEffect(() => {
     async function loadAppData() {
@@ -43,23 +48,26 @@ function App() {
 
       setNews(newsArray);
       setGalleryImages(galleryArray);
+
+      fetchAllProducts();
     };
 
     loadAppData();
-  }, [])
+  }, [fetchAllProducts])
 
   return (
     <AppContext.Provider value={{ appData, setAppData, news, galleryImages }}>
-      <div className="App">
-        <NavBar className={location.pathname === '/' ? "navbar--home" : "" } type={location.pathname === '/' ? "home-page" : "" } />
-        <Switch>
-          <Route path="/" component={HomePage} exact />
-          <Route path="/about" component={About} exact />
-          <Route path="/gallery" component={GalleryPage} exact />
-          <Route path="/news" component={NewsPage} exact />
-        </Switch>
-        <Footer />
-      </div>
+        <div className="App">
+          <NavBar className={location.pathname === '/' ? "navbar--home" : "" } type={location.pathname === '/' ? "home-page" : "" } />
+          <Switch>
+            <Route path="/" component={HomePage} exact />
+            <Route path="/about" component={About} exact />
+            <Route path="/gallery" component={GalleryPage} exact />
+            <Route path="/news" component={NewsPage} exact />
+          </Switch>
+          <Footer />
+          <Cart />
+        </div>
     </AppContext.Provider>
   );
 }

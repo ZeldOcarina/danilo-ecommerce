@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { NavLink } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+
+import { ShopContext } from "../context/ShopContext";
 
 import logo from "../images/logo/logo.svg";
 import navbarBg from "../images/navbar-bg.jpg";
 
 function NavBar({ className, type }) {
+  const { openCart } = useContext(ShopContext);
   return (
     <nav
       className={`navbar${className && " " + className}`}
@@ -44,6 +48,11 @@ function NavBar({ className, type }) {
             >
               News
             </NavLink>
+          </li>
+          <li className="navbar__item">
+            <button onClick={openCart} className="navbar__shopping-cart">
+              <FaShoppingCart color="primary" />
+            </button>
           </li>
         </ul>
       </div>

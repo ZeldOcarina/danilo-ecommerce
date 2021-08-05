@@ -1,29 +1,41 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import TopSlide from "../../components/TopSlide";
 import Carousel from "../../utils/Carousel";
 
-class FeaturedPaintings extends React.Component {
-  constructor({ slides }) {
-    super();
-    this.carousel = new Carousel({ transformAmount: 120 });
-    this.carousel.slider = React.createRef(null);
+import { ShopContext } from "../../context/ShopContext";
 
-    this.carousel.slidesData = slides;
-    this.carousel.maxSlide = slides?.length;
+function FeaturedPaintings() {
+  const [slides, setSlides] = useState([]);
+  const { products, addItemToCheckout } = useContext(ShopContext);
 
-    this.state = {
-      slides: [],
-    };
-  }
+  // eslint-disable-next-line
+  const carousel = new Carousel({ transformAmount: 150 });
 
-  componentDidMount() {
-    this.carousel.setupSlider();
-  }
+  carousel.slider = React.createRef(null);
 
-  buildSlides() {
-    return this.carousel.slidesData?.map(
-      ({ image, title, description, url }, i) => {
+  carousel.slidesData = slides;
+  carousel.maxSlide = slides?.length;
+
+  useEffect(() => {
+    carousel.setupSlider();
+    setSlides(products);
+  }, [products, carousel]);
+
+  function buildSlides() {
+    return carousel.slidesData?.map(
+      (
+        {
+          images: [{ src: image }],
+          title,
+          descriptionHtml: description,
+          url,
+          variants,
+        },
+        i
+      ) => {
+        const price = variants[0].price;
+        const productId = variants[0].id;
         const slideEl = (
           <TopSlide
             key={i}
@@ -31,8 +43,11 @@ class FeaturedPaintings extends React.Component {
             title={title}
             description={description}
             url={url}
-            handleLeftClick={this.carousel.handleLeftClick}
-            handleRightClick={this.carousel.handleRightClick}
+            price={price}
+            handleLeftClick={carousel.handleLeftClick}
+            handleRightClick={carousel.handleRightClick}
+            addItemToCheckout={addItemToCheckout}
+            productId={productId}
           />
         );
 
@@ -41,17 +56,15 @@ class FeaturedPaintings extends React.Component {
     );
   }
 
-  render() {
-    return (
-      <div className="featured-paintings">
-        <div className="container">
-          <div className="slider" ref={this.carousel.slider}>
-            {this.buildSlides()}
-          </div>
+  return (
+    <div className="featured-paintings">
+      <div className="container">
+        <div className="slider" ref={carousel.slider}>
+          {buildSlides()}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default FeaturedPaintings;
