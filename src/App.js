@@ -17,35 +17,39 @@ export const AppContext = React.createContext({});
 function App() {
   const [appData, setAppData] = useState({ slides, gallery });
   const [news, setNews] = useState([]);
+  const [galleryImages, setGalleryImages] = useState([]);
   const location = useLocation();
 
   useEffect(() => {
-    async function buildNewsArray() {
+    async function loadAppData() {
       const BASE_URL = "https://danilo-admin.monarchy.io/wp-json/wp/v2";
-      const response = await axios.get(`${BASE_URL}/news`);
-      const newsArray = response.data;
+      const newsPromise = axios.get(`${BASE_URL}/news?_embed`);
+      const galleryPromise = axios.get(`${BASE_URL}/gallery-images?_embed`);
+      
+      const [ newsResponse, galleryResponse ] = await Promise.all([ newsPromise, galleryPromise ]);
+      
+      const newsArray = newsResponse.data;      
+      const galleryArray = galleryResponse.data;
 
       for(let newPost of newsArray) {
-        const promise1 = axios.get(`${BASE_URL}/users/${newPost.author}`);
-        const promise2 = axios.get(newPost._links["wp:featuredmedia"][0].href);
+        newPost.image = newPost._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;
+        newPost.alt = newPost._embedded["wp:featuredmedia"][0].alt_text ? newPost._embedded["wp:featuredmedia"][0].alt_text : "Some alt text";
+      }
 
-        const data = await Promise.all([ promise1, promise2 ]);
-
-        newPost.author = data[0].data.name;
-        newPost.image = data[1].data.media_details.sizes.large.source_url;
-        newPost.alt = data[1].data.alt_text ? data[1].data.alt_text : "Alternative text";
+      for(let galleryPost of galleryArray) {
+        galleryPost.image = galleryPost._embedded["wp:featuredmedia"][0].source_url;
+        galleryPost.alt = galleryPost._embedded["wp:featuredmedia"][0].alt_text ? galleryPost._embedded["wp:featuredmedia"][0].alt_text : "Some alt text";
       }
 
       setNews(newsArray);
-
-      console.log(newsArray);
+      setGalleryImages(galleryArray);
     };
 
-    buildNewsArray();
+    loadAppData();
   }, [])
 
   return (
-    <AppContext.Provider value={{ appData, setAppData, news }}>
+    <AppContext.Provider value={{ appData, setAppData, news, galleryImages }}>
       <div className="App">
         <NavBar className={location.pathname === '/' ? "navbar--home" : "" } type={location.pathname === '/' ? "home-page" : "" } />
         <Switch>

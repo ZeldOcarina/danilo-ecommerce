@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { AppContext } from "../App";
 
-function GalleryItem({ title, image }) {
+function GalleryItem({ title: { rendered: title }, image }) {
   return (
     <div className="gallery-item">
       <h3 className="gallery-item__title">{title}</h3>
@@ -13,9 +13,8 @@ function GalleryItem({ title, image }) {
 }
 
 function Gallery() {
-  const {
-    appData: { gallery },
-  } = useContext(AppContext);
+  const { galleryImages: gallery } = useContext(AppContext);
+
   return (
     <section className="gallery">
       <div className="gallery__container">

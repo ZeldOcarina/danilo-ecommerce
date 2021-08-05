@@ -9,7 +9,7 @@ function GalleryPicture({
   const available = availability > 0;
 
   return (
-    <div class="picture">
+    <div className="picture">
       <div className="picture__image-container">
         <img
           src={image}

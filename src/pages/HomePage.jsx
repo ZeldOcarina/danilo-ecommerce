@@ -15,8 +15,9 @@ function HomePage() {
   const {
     homeAbout: { title, content, image },
   } = appContent;
+
   const {
-    appData: { slides, gallery },
+    appData: { slides },
   } = useContext(AppContext);
 
   return (
@@ -26,7 +27,7 @@ function HomePage() {
       <HomeAbout />
       <HomeGallery slides={slides} />
       <TextAndImage {...{ aboutPage: false, title, content, image }} />
-      <Gallery gallery={gallery} />
+      <Gallery />
     </main>
   );
 }
