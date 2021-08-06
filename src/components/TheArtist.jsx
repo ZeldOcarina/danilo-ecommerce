@@ -14,8 +14,9 @@ function TheArtist({ reference, height }) {
       </h3>
       <div className="home-artist__text-container">
         <p className="home-artist__description">
-          Fu durante un soggiorno a New York che Danilo iniziò il suo percorso
-          artistico utilizzando una street-pop art
+          Una volta che riusciamo ad acquisire la nostra vera consapevolezza, a
+          prescindere da quali siano gli eventi, la vita è, e diventerà, sempre
+          più meravigliosa.
         </p>
 
         <Link
