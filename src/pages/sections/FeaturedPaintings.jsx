@@ -7,7 +7,7 @@ import { ShopContext } from "../../context/ShopContext";
 
 function FeaturedPaintings() {
   const [slides, setSlides] = useState([]);
-  const { products, addItemToCheckout } = useContext(ShopContext);
+  const { products, addItemToCheckout, buyNowClick } = useContext(ShopContext);
 
   // eslint-disable-next-line
   const carousel = new Carousel({ transformAmount: 150 });
@@ -48,6 +48,7 @@ function FeaturedPaintings() {
             handleRightClick={carousel.handleRightClick}
             addItemToCheckout={addItemToCheckout}
             productId={productId}
+            buyNowClick={buyNowClick}
           />
         );
 

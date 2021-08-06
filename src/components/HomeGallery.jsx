@@ -1,31 +1,41 @@
-import React, { Component } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 import Carousel from "../utils/Carousel";
 import HomeBottomSlide from "../components/HomeBottomSlide";
 
-class HomeGallery extends Component {
-  constructor({ slides }) {
-    super();
-    /*this.btnsLeft = slider.querySelectorAll(".slider__btn--left");
-      this.btnsRight = slider.querySelectorAll(".slider__btn--right");
-      this.dotContainer = slider.querySelector(".dots");*/
-    this.carousel = new Carousel({ transformAmount: 40 });
-    this.carousel.slider = React.createRef(null);
+import { ShopContext } from "../context/ShopContext";
 
-    this.carousel.slidesData = slides;
-    this.carousel.maxSlide = slides?.length;
-    this.state = {
-      slides: [],
-    };
-  }
+function HomeGallery() {
+  const [slides, setSlides] = useState([]);
+  const { products, addItemToCheckout, buyNowClick } = useContext(ShopContext);
 
-  componentDidMount() {
-    this.carousel.setupSlider();
-  }
+  // eslint-disable-next-line
+  const carousel = new Carousel({ transformAmount: 40 });
 
-  buildSlides() {
-    return this.carousel.slidesData?.map(
-      ({ image, title, description, url }, i) => {
+  carousel.slider = React.createRef(null);
+
+  carousel.slidesData = slides;
+  carousel.maxSlide = slides?.length;
+
+  useEffect(() => {
+    carousel.setupSlider();
+    setSlides(products);
+  }, [products, carousel]);
+
+  function buildSlides() {
+    return carousel.slidesData?.map(
+      (
+        {
+          images: [{ src: image }],
+          title,
+          descriptionHtml: description,
+          url,
+          variants,
+        },
+        i
+      ) => {
+        const price = variants[0].price;
+        const productId = variants[0].id;
         const slideEl = (
           <HomeBottomSlide
             key={i}
@@ -33,8 +43,12 @@ class HomeGallery extends Component {
             title={title}
             description={description}
             url={url}
-            handleLeftClick={this.carousel.handleLeftClick}
-            handleRightClick={this.carousel.handleRightClick}
+            price={price}
+            handleLeftClick={carousel.handleLeftClick}
+            handleRightClick={carousel.handleRightClick}
+            addItemToCheckout={addItemToCheckout}
+            productId={productId}
+            buyNowClick={buyNowClick}
           />
         );
 
@@ -43,31 +57,29 @@ class HomeGallery extends Component {
     );
   }
 
-  render() {
-    return (
-      <div className="home-gallery">
-        <div className="container">
-          <div className="slider" ref={this.carousel.slider}>
-            {this.buildSlides()}
-          </div>
-          <div className="home-gallery__btns-container container">
-            <span
-              className="home-gallery__btn text-white me-4 home-gallery__btn--left"
-              onClick={this.carousel.handleLeftClick}
-            >
-              {"<"}
-            </span>
-            <span
-              className="home-gallery__btn text-white home-gallery__btn--left--right"
-              onClick={this.carousel.handleRightClick}
-            >
-              {">"}
-            </span>
-          </div>
+  return (
+    <div className="home-gallery">
+      <div className="container">
+        <div className="slider" ref={carousel.slider}>
+          {buildSlides()}
+        </div>
+        <div className="home-gallery__btns-container container">
+          <span
+            className="home-gallery__btn text-white me-4 home-gallery__btn--left"
+            onClick={carousel.handleLeftClick}
+          >
+            {"<"}
+          </span>
+          <span
+            className="home-gallery__btn text-white home-gallery__btn--left--right"
+            onClick={carousel.handleRightClick}
+          >
+            {">"}
+          </span>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default HomeGallery;

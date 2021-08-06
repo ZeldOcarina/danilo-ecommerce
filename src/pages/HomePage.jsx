@@ -7,7 +7,6 @@ import HomeGallery from "../components/HomeGallery";
 import TextAndImage from "./sections/TextAndImage";
 import Gallery from "../components/Gallery";
 
-import { AppContext } from "../App";
 import { ShopContext } from "../context/ShopContext";
 
 import appContent from "../content/content";
@@ -17,10 +16,6 @@ function HomePage() {
     homeAbout: { title, content, image },
   } = appContent;
 
-  const {
-    appData: { slides },
-  } = useContext(AppContext);
-
   const { products } = useContext(ShopContext);
 
   return (
@@ -28,7 +23,7 @@ function HomePage() {
       <Hero />
       <FeaturedPaintings slides={products} />
       <HomeAbout />
-      <HomeGallery slides={slides} />
+      <HomeGallery />
       <TextAndImage {...{ aboutPage: false, title, content, image }} />
       <Gallery />
     </main>

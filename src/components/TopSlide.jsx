@@ -6,12 +6,12 @@ function TopSlide({
   image,
   title,
   description,
-  url,
   price,
   productId,
   handleLeftClick,
   handleRightClick,
   addItemToCheckout,
+  buyNowClick,
 }) {
   return (
     <div className="slide">
@@ -47,9 +47,12 @@ function TopSlide({
         >
           ADD TO CART
         </button>
-        <a href={url} className="slide__btn btn btn-primary btn-lg mt-1">
+        <button
+          onClick={() => buyNowClick(productId)}
+          className="slide__btn btn btn-primary btn-lg mt-1"
+        >
           BUY NOW
-        </a>
+        </button>
       </div>
     </div>
   );

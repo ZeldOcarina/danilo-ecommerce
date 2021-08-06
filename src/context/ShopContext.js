@@ -18,7 +18,6 @@ class ShopProvider extends Component {
     isMenuOpen: false
   };
 
-
   componentDidMount() {
     if (localStorage.checkout_id) {
       this.fetchCheckout(localStorage.checkout_id)
@@ -42,7 +41,7 @@ class ShopProvider extends Component {
       .catch((error) => console.log(error));
   };
 
-  addItemToCheckout = async (variantId, quantity) => {
+  addItemToCheckout = async (variantId, quantity, options={ noOpen: false }) => {
     const lineItemsToAdd = [
       {
         variantId,
@@ -55,8 +54,14 @@ class ShopProvider extends Component {
     );
     this.setState({ checkout });
 
-    this.openCart();
+    if(!options.noOpen)
+        this.openCart();
   };
+
+  buyNowClick = async(variantId) => {
+    await this.addItemToCheckout(variantId, 1, { noOpen: true });
+    window.location.assign(this.state.checkout.webUrl);
+   }
 
   removeLineItem = async (lineItemIdsToRemove) => {
     const checkoutId = this.state.checkout.id
@@ -106,7 +111,8 @@ class ShopProvider extends Component {
           closeMenu: this.closeMenu,
           openMenu: this.openMenu,
           addItemToCheckout: this.addItemToCheckout,
-          removeLineItem: this.removeLineItem
+          removeLineItem: this.removeLineItem,
+          buyNowClick: this.buyNowClick
         }}
       >
         {this.props.children}
