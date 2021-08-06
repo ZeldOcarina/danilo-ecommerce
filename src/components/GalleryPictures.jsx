@@ -57,10 +57,10 @@ function GalleryPicture({
   );
 }
 
-function GalleryPictures({ slides: pictures }) {
+function GalleryPictures() {
   const { products, addItemToCheckout, buyNowClick } = useContext(ShopContext);
   return (
-    <section class="gallery-pictures">
+    <section className="gallery-pictures">
       <div className="container gallery-pictures__container">
         {products.map((product) => (
           <GalleryPicture

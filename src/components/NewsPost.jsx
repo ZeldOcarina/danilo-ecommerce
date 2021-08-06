@@ -3,7 +3,8 @@ import React from "react";
 import { parseItalianMonth } from "../utils/utils";
 
 function NewsPost({ newsPost }) {
-  const { date: stringDate, author, image, alt } = newsPost;
+  const { date: stringDate, image, alt } = newsPost;
+  const author = newsPost._embedded.author[0].name;
 
   const initialDate = new Date(stringDate);
   const date = new Date();
