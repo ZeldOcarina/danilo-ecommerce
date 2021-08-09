@@ -22,6 +22,29 @@
     }
   }
 
+  &__pages-container {
+    display: flex;
+    margin-right: 4rem;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+
+    .navbar__link {
+      text-transform: capitalize;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    background-color: transparent;
+    border: none;
+
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+
   &__logo {
     width: 30rem;
   }
@@ -29,6 +52,11 @@
   &__menu {
     display: flex;
     list-style: none;
+    z-index: 110;
+
+    @include respond(tab-port) {
+      flex-direction: row-reverse;
+    }
   }
 
   &__item {
@@ -49,5 +77,33 @@
   &__shopping-cart {
     background-color: transparent;
     border: none;
+  }
+}
+
+.mobile-navbar {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+  background-color: $color-secondary;
+  width: 100%;
+  color: $white;
+  text-transform: capitalize;
+  padding: 4rem;
+  z-index: 100;
+
+  a {
+    color: $white;
+  }
+
+  &__ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &--visible {
+    transform: translateY(0);
   }
 }

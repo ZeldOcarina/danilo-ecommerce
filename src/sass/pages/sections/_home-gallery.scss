@@ -8,6 +8,13 @@
   @include respond(tab-land) {
     height: 125vh;
   }
+  @include respond(tab-port) {
+    height: 100vh;
+    padding: 5rem 0 10rem 0;
+  }
+  @include respond(phone-land) {
+    height: 275vh;
+  }
 
   &__btns-container {
     position: absolute;

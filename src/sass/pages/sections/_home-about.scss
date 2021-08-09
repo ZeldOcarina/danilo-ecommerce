@@ -1,0 +1,11 @@
+.home-about {
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+
+    .home-square {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

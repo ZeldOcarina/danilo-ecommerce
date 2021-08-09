@@ -20,7 +20,7 @@ function HomeAbout() {
   });
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center home-about">
       <TheArtist reference={theArtistEl} height={height} />
       <NewsSection reference={newsSectionEl} height={height} />
     </div>

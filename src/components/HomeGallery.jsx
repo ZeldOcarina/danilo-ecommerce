@@ -17,7 +17,6 @@ function HomeGallery() {
     query: "only screen and (max-width: 75em)",
   });
 
-  console.log(isTabLand);
   function setTransformAmount() {
     if (isTabLand) return 55;
     if (isLaptop) return 35;

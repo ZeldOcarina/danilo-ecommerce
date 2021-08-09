@@ -1,5 +1,6 @@
 .gallery-pictures {
   padding: 10rem 0;
+
   &__container {
     display: flex;
     gap: 4rem;
@@ -11,6 +12,10 @@
 .picture {
   width: calc(33% - 4rem);
   font-size: 2rem;
+
+  @include respond(tab-port) {
+    width: calc(50% - 4rem);
+  }
 
   &__image-container {
     position: relative;

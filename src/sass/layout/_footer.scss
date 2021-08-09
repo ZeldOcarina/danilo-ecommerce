@@ -18,5 +18,9 @@
   &__copy {
     display: block;
     font-size: 2rem;
+
+    @include respond(tab-port) {
+      font-size: 1.5rem;
+    }
   }
 }

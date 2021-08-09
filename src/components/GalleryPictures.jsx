@@ -37,7 +37,7 @@ function GalleryPicture({
       {available && (
         <>
           <p className="picture__price">{parsePrice(price)}</p>
-          <div className="slide__btns-container d-flex mt-1">
+          <div className="slide__btns-container slide__btns-container--vertical d-flex mt-1">
             <button
               className="slide__btn slide__btn--outline btn btn-outline-white btn-lg"
               onClick={() => addItemToCheckout(productId, 1)}

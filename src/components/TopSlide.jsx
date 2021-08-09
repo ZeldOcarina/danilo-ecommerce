@@ -42,7 +42,7 @@ function TopSlide({
         ></p>
         <p className="slide__description text-white">{parsePrice(price)}</p>
         <button
-          className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1"
+          className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
           onClick={() => addItemToCheckout(productId, 1)}
         >
           ADD TO CART

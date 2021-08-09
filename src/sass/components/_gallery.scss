@@ -2,12 +2,20 @@
   &__container {
     display: flex;
     flex-wrap: wrap;
+
+    @include respond(phone-land) {
+      justify-content: center;
+    }
   }
 }
 
 .gallery-item {
   width: 33.333%;
   position: relative;
+
+  @include respond(phone-land) {
+    width: 50%;
+  }
 
   &__title {
     position: absolute;

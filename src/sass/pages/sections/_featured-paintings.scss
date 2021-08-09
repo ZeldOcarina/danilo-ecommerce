@@ -5,6 +5,13 @@
   position: relative;
   height: 60vh;
 
+  @include respond(tab-port) {
+    padding-top: 4rem;
+  }
+  @include respond(phone-land) {
+    height: 150vh;
+  }
+
   &__drawing {
     position: relative;
     transform: translateY(-30%);
@@ -20,6 +27,10 @@
     @include respond(tab-land) {
       width: 30rem;
       transform: translateY(-15%);
+    }
+    @include respond(tab-port) {
+      width: 30rem;
+      transform: translateY(0);
     }
   }
 }

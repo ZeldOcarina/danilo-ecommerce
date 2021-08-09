@@ -10,6 +10,9 @@
   @include respond(tab-land) {
     height: 40vh;
   }
+  @include respond(phone-land) {
+    height: 50vh;
+  }
 
   &__logo {
     margin-top: 7%;

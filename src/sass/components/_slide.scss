@@ -34,9 +34,11 @@
   &__btns-container {
     gap: 1.5rem;
 
-    @include respond(tab-land) {
-      gap: 2rem;
-      flex-direction: column;
+    &--vertical {
+      @include respond(tab-land) {
+        gap: 2rem;
+        flex-direction: column;
+      }
     }
   }
 
@@ -73,6 +75,9 @@
     height: 70vh;
     align-items: center;
     margin-top: 5rem;
+  }
+  @include respond(phone-land) {
+    height: 200vh;
   }
 
   &__image {
