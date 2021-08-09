@@ -12,5 +12,14 @@
     z-index: 10;
     overflow: visible;
     width: 40%;
+
+    @include respond(laptop) {
+      width: 40rem;
+      transform: translateY(-34%);
+    }
+    @include respond(tab-land) {
+      width: 30rem;
+      transform: translateY(-15%);
+    }
   }
 }

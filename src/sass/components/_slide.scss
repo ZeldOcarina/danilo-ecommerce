@@ -33,6 +33,11 @@
 
   &__btns-container {
     gap: 1.5rem;
+
+    @include respond(tab-land) {
+      gap: 2rem;
+      flex-direction: column;
+    }
   }
 
   &__btn {
@@ -45,6 +50,10 @@
       border: 1px solid $white;
       color: $white;
       margin-right: 2rem;
+
+      @include respond(tab-land) {
+        margin-right: 0;
+      }
 
       &:hover {
         color: $black;
@@ -60,8 +69,18 @@
   justify-content: center;
   height: 70vh;
 
+  @include respond(tab-land) {
+    height: 70vh;
+    align-items: center;
+    margin-top: 5rem;
+  }
+
   &__image {
     width: 30rem;
+
+    @include respond(tab-land) {
+      width: 30rem;
+    }
   }
 
   &__buy {

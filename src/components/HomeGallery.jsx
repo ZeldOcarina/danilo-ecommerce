@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import Carousel from "../utils/Carousel";
 import HomeBottomSlide from "../components/HomeBottomSlide";
@@ -9,8 +10,24 @@ function HomeGallery() {
   const [slides, setSlides] = useState([]);
   const { products, addItemToCheckout, buyNowClick } = useContext(ShopContext);
 
+  const isLaptop = useMediaQuery({
+    query: "only screen and (max-width: 102.18em)",
+  });
+  const isTabLand = useMediaQuery({
+    query: "only screen and (max-width: 75em)",
+  });
+
+  console.log(isTabLand);
+  function setTransformAmount() {
+    if (isTabLand) return 55;
+    if (isLaptop) return 35;
+    return 40;
+  }
+
+  const transformAmount = setTransformAmount();
+
   // eslint-disable-next-line
-  const carousel = new Carousel({ transformAmount: 40 });
+  const carousel = new Carousel({ transformAmount });
 
   carousel.slider = React.createRef(null);
 

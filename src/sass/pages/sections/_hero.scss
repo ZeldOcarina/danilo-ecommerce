@@ -4,7 +4,18 @@
   background-size: cover;
   background-position: top;
 
+  @include respond(laptop) {
+    background-position: top;
+  }
+  @include respond(tab-land) {
+    height: 40vh;
+  }
+
   &__logo {
     margin-top: 7%;
+
+    @include respond(tab-land) {
+      width: 45rem;
+    }
   }
 }

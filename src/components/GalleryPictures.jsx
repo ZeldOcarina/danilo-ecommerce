@@ -45,7 +45,7 @@ function GalleryPicture({
               ADD TO CART
             </button>
             <button
-              className="btn btn-outline-light slide__btn slide__btn--outline picture__btn"
+              className="btn btn-outline-light slide__btn slide__btn--outline picture__btn btn-lg"
               onClick={() => buyNowClick(productId)}
             >
               BUY NOW

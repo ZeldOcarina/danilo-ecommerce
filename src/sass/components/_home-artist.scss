@@ -5,25 +5,48 @@
   align-items: center;
   padding: 5%;
   text-align: center;
+  position: relative;
+
+  @include respond(laptop) {
+    justify-content: center;
+  }
 
   &__title {
     font-size: 1.4rem;
     font-weight: 400;
     text-align: center;
+
+    @include respond(laptop) {
+      position: absolute;
+      top: 5%;
+    }
   }
 
   &__text-container {
     margin-bottom: 50%;
     transform: translateY(50%);
+
+    @include respond(laptop) {
+      margin-bottom: 0;
+      transform: none;
+    }
   }
 
   &__description {
     font-size: 4rem;
     font-style: italic;
+
+    @include respond(tab-land) {
+      font-size: 2.5rem;
+    }
   }
 
   &__btn {
     padding: 2.5rem 6rem;
     width: max-content;
+
+    @include respond(tab-land) {
+      padding: 2rem 4rem;
+    }
   }
 }

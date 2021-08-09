@@ -6,6 +6,10 @@
     position: absolute;
     right: 30rem;
 
+    @include respond(tab-land) {
+      right: 10rem;
+    }
+
     .navbar__logo {
       display: none;
     }
