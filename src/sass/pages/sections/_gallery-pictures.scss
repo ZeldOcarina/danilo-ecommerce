@@ -1,11 +1,22 @@
 .gallery-pictures {
   padding: 10rem 0;
 
+  &--gallery-page {
+    .slide__btn {
+      width: 100%;
+    }
+  }
+
   &__container {
     display: flex;
     gap: 4rem;
     flex-wrap: wrap;
     justify-content: center;
+
+    @include respond(phone-port) {
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -15,6 +26,9 @@
 
   @include respond(tab-port) {
     width: calc(50% - 4rem);
+  }
+  @include respond(phone-port) {
+    width: 100%;
   }
 
   &__image-container {

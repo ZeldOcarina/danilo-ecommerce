@@ -4,6 +4,8 @@
   display: flex;
   justify-content: center;
   padding: 10rem 0 20rem 0;
+  z-index: 100;
+  background-color: $black;
 
   @include respond(tab-land) {
     height: 125vh;
@@ -14,6 +16,11 @@
   }
   @include respond(phone-land) {
     height: 275vh;
+  }
+  @include respond(phone-port) {
+    height: 120vh;
+    padding: 0 0 0 0;
+    background-color: $black;
   }
 
   &__btns-container {
@@ -29,6 +36,12 @@
     @include respond(tab-land) {
       justify-content: space-around;
     }
+    @include respond(phone-port) {
+      bottom: 50%;
+      justify-content: space-between;
+      padding: 0;
+      z-index: 10;
+    }
   }
 
   &__btn {
@@ -40,12 +53,41 @@
     align-items: center;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 100;
+
+    &--left {
+      @include respond(phone-port) {
+        margin-right: 5rem;
+      }
+    }
+
+    @include respond(phone-port) {
+      border: none;
+      width: 1.5rem;
+      height: auto;
+      padding: 0;
+      color: black;
+      border-radius: 0;
+      transform: scale(1.5);
+    }
 
     &:hover {
       cursor: pointer;
       background-color: $white;
       border-radius: 1px solid grey;
       color: $black !important;
+    }
+  }
+
+  &__slide-icon {
+    color: $white;
+    width: 3rem;
+    margin-top: 2rem;
+    display: none;
+
+    @include respond(tab-land) {
+      display: block;
     }
   }
 }

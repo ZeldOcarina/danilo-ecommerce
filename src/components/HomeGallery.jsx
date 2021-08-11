@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 
+import slideIcon from "../images/icons/swipe-icon.svg";
+
 import Carousel from "../utils/Carousel";
 import HomeBottomSlide from "../components/HomeBottomSlide";
 
@@ -16,8 +18,12 @@ function HomeGallery() {
   const isTabLand = useMediaQuery({
     query: "only screen and (max-width: 75em)",
   });
+  const isPhonePort = useMediaQuery({
+    query: "only screen and (max-width: 28.125em)",
+  });
 
   function setTransformAmount() {
+    if (isPhonePort) return 100;
     if (isTabLand) return 55;
     if (isLaptop) return 35;
     return 40;
@@ -76,6 +82,11 @@ function HomeGallery() {
   return (
     <div className="home-gallery">
       <div className="container">
+        <img
+          className="home-gallery__slide-icon"
+          src={slideIcon}
+          alt="swipe icon"
+        />
         <div className="slider" ref={carousel.slider}>
           {buildSlides()}
         </div>

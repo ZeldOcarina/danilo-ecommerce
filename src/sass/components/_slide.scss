@@ -11,6 +11,10 @@
   /* THIS creates the animation! */
   transition: transform 1s;
 
+  @include respond(phone-port) {
+    flex-direction: column;
+  }
+
   &__components {
     // position: absolute;
     // top: 5rem;
@@ -47,6 +51,10 @@
     background-color: $color-secondary;
     letter-spacing: inherit;
 
+    @include respond(phone-port) {
+      width: 80%;
+    }
+
     &--outline {
       background-color: transparent;
       border: 1px solid $white;
@@ -78,6 +86,11 @@
   }
   @include respond(phone-land) {
     height: 200vh;
+  }
+  @include respond(phone-port) {
+    height: 100vh;
+    margin-top: 0;
+    z-index: 1;
   }
 
   &__image {

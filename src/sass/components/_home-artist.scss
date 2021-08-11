@@ -10,6 +10,9 @@
   @include respond(laptop) {
     justify-content: center;
   }
+  @include respond(phone-port) {
+    padding: 6rem 2rem 5rem 2rem;
+  }
 
   &__title {
     font-size: 1.4rem;
@@ -19,6 +22,11 @@
     @include respond(laptop) {
       position: absolute;
       top: 5%;
+    }
+    @include respond(phone-port) {
+      position: static;
+      top: 0;
+      margin-bottom: 3rem;
     }
   }
 
@@ -38,6 +46,9 @@
 
     @include respond(tab-land) {
       font-size: 2.5rem;
+    }
+    @include respond(tab-land) {
+      font-size: 2.2rem;
     }
   }
 

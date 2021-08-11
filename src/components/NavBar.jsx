@@ -52,7 +52,9 @@ function NavBar({ className, type }) {
         </ul>
       </nav>
       <nav
-        className={`navbar${className && " " + className}`}
+        className={`navbar${className && " " + className}${
+          type !== "home-page" ? ` navbar--internal` : ""
+        }`}
         style={{
           backgroundImage: type === "home-page" ? "" : `url(${navbarBg})`,
         }}
@@ -63,7 +65,11 @@ function NavBar({ className, type }) {
           </NavLink>
           <ul className="navbar__menu">
             <button onClick={toggleNavbar} className="navbar__hamburger ms-5">
-              {open ? <MdClose size={30} /> : <GiHamburgerMenu size={30} />}
+              {open ? (
+                <MdClose color="primary" size={30} />
+              ) : (
+                <GiHamburgerMenu size={30} />
+              )}
             </button>
             <div className="navbar__pages-container">
               {navItems.map((page) => (
@@ -80,7 +86,10 @@ function NavBar({ className, type }) {
             </div>
             <li className="navbar__item">
               <button onClick={openCart} className="navbar__shopping-cart">
-                <FaShoppingCart color="primary" size={isTabPort ? 30 : "1em"} />
+                <FaShoppingCart
+                  color={"primary"}
+                  size={isTabPort ? 30 : "1em"}
+                />
               </button>
             </li>
           </ul>

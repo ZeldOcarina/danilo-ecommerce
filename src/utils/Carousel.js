@@ -10,6 +10,8 @@ export default class Carousel {
     this.handleLeftClick = this.handleLeftClick.bind(this);
     this.handleRightClick = this.handleRightClick.bind(this);
     this.handleGesture = this.handleGesture.bind(this);
+
+    this.timeout = false;
   }
 
   setupSlider() {
@@ -22,14 +24,22 @@ export default class Carousel {
       e.key === "ArrowRight" && this.nextSlide();
     });
 
-    this.slider.current.addEventListener("touchstart", (e) => {
-      this.touchstartX = e.changedTouches[0].screenX;
-    });
+    this.slider.current.addEventListener(
+      "touchstart",
+      debounce((e) => {
+        this.touchstartX = e.changedTouches[0].screenX;
+      }),
+      500
+    );
 
-    this.slider.current.addEventListener("touchend", (e) => {
-      this.touchendX = e.changedTouches[0].screenX;
-      debounce(this.handleGesture)();
-    });
+    this.slider.current.addEventListener(
+      "touchend",
+      debounce((e) => {
+        this.touchendX = e.changedTouches[0].screenX;
+        this.handleGesture();
+      }),
+      500
+    );
   }
 
   nextSlide() {
@@ -73,6 +83,8 @@ export default class Carousel {
   }
 
   handleGesture() {
+    if (this.timeout) return;
+
     const isRight = this.touchstartX > this.touchendX;
 
     if (this.touchstartX === this.touchendX) return;

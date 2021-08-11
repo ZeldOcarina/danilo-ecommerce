@@ -9,10 +9,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(phone-port) {
+      flex-direction: column;
+    }
   }
 
   &__logo {
     width: 30rem;
+
+    @include respond(phone-port) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__copy {
@@ -21,6 +29,9 @@
 
     @include respond(tab-port) {
       font-size: 1.5rem;
+    }
+    @include respond(phone-port) {
+      text-align: center;
     }
   }
 }

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import TheArtist from "../../components/TheArtist";
 import NewsSection from "../../components/NewsSection";
@@ -9,6 +10,10 @@ function HomeAbout() {
 
   const theArtistEl = useRef(null);
   const newsSectionEl = useRef(null);
+
+  const isMobile = useMediaQuery({
+    query: "only screen and (max-width: 28.125em)",
+  });
 
   useEffect(() => {
     theArtistEl.current &&
@@ -21,8 +26,11 @@ function HomeAbout() {
 
   return (
     <div className="d-flex justify-content-center home-about">
-      <TheArtist reference={theArtistEl} height={height} />
-      <NewsSection reference={newsSectionEl} height={height} />
+      <TheArtist reference={theArtistEl} height={isMobile ? "auto" : height} />
+      <NewsSection
+        reference={newsSectionEl}
+        height={isMobile ? "auto" : height}
+      />
     </div>
   );
 }

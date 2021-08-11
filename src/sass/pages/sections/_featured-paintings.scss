@@ -11,6 +11,9 @@
   @include respond(phone-land) {
     height: 150vh;
   }
+  @include respond(phone-port) {
+    height: 120vh;
+  }
 
   &__drawing {
     position: relative;
@@ -31,6 +34,10 @@
     @include respond(tab-port) {
       width: 30rem;
       transform: translateY(0);
+    }
+    @include respond(phone-port) {
+      width: 80%;
+      margin: 0 auto;
     }
   }
 }

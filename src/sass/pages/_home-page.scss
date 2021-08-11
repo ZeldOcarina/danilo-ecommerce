@@ -8,6 +8,10 @@
   width: 50%;
   height: auto;
 
+  @include respond(phone-port) {
+    width: 100%;
+  }
+
   &--artist {
     background-image: linear-gradient(
         rgba($color-secondary, 0.8),

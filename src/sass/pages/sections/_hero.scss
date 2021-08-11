@@ -13,12 +13,21 @@
   @include respond(phone-land) {
     height: 50vh;
   }
+  @include respond(phone-port) {
+    height: 60vh;
+    background-image: url("../../../images/mobile-hero.jpg");
+  }
 
   &__logo {
     margin-top: 7%;
 
     @include respond(tab-land) {
       width: 45rem;
+    }
+    @include respond(phone-port) {
+      width: 80%;
+      transform: translateX(-50%) translateY(8rem);
+      margin-left: 50%;
     }
   }
 }

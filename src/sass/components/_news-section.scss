@@ -20,10 +20,19 @@
     margin-bottom: 2rem;
   }
 
+  @include respond(phone-port) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   &__date,
   &__text {
     font-size: 2.5rem;
     text-align: left;
+
+    @include respond(phone-port) {
+      text-align: center;
+    }
   }
 
   &__date {

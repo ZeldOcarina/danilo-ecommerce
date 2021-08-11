@@ -2,12 +2,40 @@
   background-size: cover;
   padding: 4rem 0;
 
+  &--internal {
+    @include respond(phone-port) {
+      display: flex;
+      height: 19rem;
+      position: relative;
+    }
+
+    .navbar__menu {
+      @include respond(phone-port) {
+        top: 4rem;
+      }
+    }
+
+    .navbar__logo {
+      @include respond(phone-port) {
+        position: absolute;
+        bottom: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
   &--home {
     position: absolute;
     right: 30rem;
+    z-index: 200;
 
     @include respond(tab-land) {
       right: 10rem;
+    }
+    @include respond(phone-port) {
+      right: 50%;
+      transform: translateX(50%);
     }
 
     .navbar__logo {
@@ -45,6 +73,9 @@
     }
   }
 
+  &__container {
+  }
+
   &__logo {
     width: 30rem;
   }
@@ -56,6 +87,14 @@
 
     @include respond(tab-port) {
       flex-direction: row-reverse;
+    }
+    @include respond(phone-port) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      top: 10rem;
+      padding: 0;
     }
   }
 
@@ -90,6 +129,11 @@
   text-transform: capitalize;
   padding: 4rem;
   z-index: 100;
+
+  @include respond(phone-port) {
+    padding-top: 10rem;
+    z-index: 50;
+  }
 
   a {
     color: $white;

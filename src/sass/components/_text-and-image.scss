@@ -1,6 +1,10 @@
 .text-and-image {
   padding: 10rem 0;
 
+  @include respond(phone-port) {
+    padding: 5rem 0;
+  }
+
   &--about {
     color: white;
     background-color: $black;
@@ -11,7 +15,7 @@
   }
 
   &__title {
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     font-family: "Greycliff", sans-serif;
     font-size: 3.3rem;
     font-weight: 400;
@@ -29,10 +33,19 @@
       justify-content: center;
       gap: 5rem;
     }
+    @include respond(phone-port) {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
   }
 
   &__left-container {
     width: 65%;
+
+    @include respond(phone-port) {
+      width: 100%;
+      padding: 1rem;
+    }
   }
 
   &__image {

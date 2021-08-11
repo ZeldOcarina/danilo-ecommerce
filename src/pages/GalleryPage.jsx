@@ -14,7 +14,7 @@ function GalleryPage() {
   return (
     <main className="gallery-page">
       <TextAndImage {...{ aboutPage: true, title, content, image }} />
-      <GalleryPictures />
+      <GalleryPictures type="gallery-page" />
       <Gallery />
     </main>
   );

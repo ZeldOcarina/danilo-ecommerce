@@ -2,4 +2,15 @@
   background-color: $black;
   color: $white;
   padding: 10rem 0;
+
+  @include respond(phone-port) {
+    padding: 5rem 0;
+  }
+
+  &__container {
+    @include respond(phone-port) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
 }

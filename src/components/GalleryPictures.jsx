@@ -57,10 +57,14 @@ function GalleryPicture({
   );
 }
 
-function GalleryPictures() {
+function GalleryPictures({ type }) {
   const { products, addItemToCheckout, buyNowClick } = useContext(ShopContext);
   return (
-    <section className="gallery-pictures">
+    <section
+      className={
+        type ? `gallery-pictures gallery-pictures--${type}` : "gallery-pictures"
+      }
+    >
       <div className="container gallery-pictures__container">
         {products.map((product) => (
           <GalleryPicture
