@@ -36,6 +36,8 @@
     @include respond(phone-port) {
       flex-direction: column-reverse;
       gap: 0;
+      width: 90%;
+      margin: 0 auto;
     }
   }
 
@@ -51,6 +53,11 @@
   &__image {
     width: 35rem;
     height: min-content;
+
+    @include respond(phone-port) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 
   &__btn {
