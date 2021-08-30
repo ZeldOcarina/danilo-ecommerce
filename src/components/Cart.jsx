@@ -58,7 +58,7 @@ export default function TemporaryDrawer() {
             </Typography>
           </Box>
           <div className="shopping-cart__items">
-            {checkout.lineItems &&
+            {checkout?.lineItems &&
               checkout.lineItems.map((item) => {
                 return (
                   <div className="shopping-cart__line-item" key={uuidv4()}>
@@ -90,7 +90,7 @@ export default function TemporaryDrawer() {
           </div>
           <Box display="flex" justifyContent="flex-start" mt={5}>
             <a
-              href={checkout.webUrl}
+              href={checkout?.webUrl}
               className="btn slide__btn text-white text-uppercase"
             >
               Checkout

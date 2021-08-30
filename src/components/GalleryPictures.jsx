@@ -12,10 +12,11 @@ function GalleryPicture({
   variants,
   addItemToCheckout,
   buyNowClick,
+  availableForSale,
+  handleShowInfo,
 }) {
   const price = variants[0].price;
   const productId = variants[0].id;
-  const available = true;
 
   return (
     <div className="picture">
@@ -23,18 +24,21 @@ function GalleryPicture({
         <img
           src={image}
           alt={alt}
-          className={
-            available ? "picture__image" : "picture__image picture__image--sold"
-          }
+          // className={
+          //   availableForSale
+          //     ? "picture__image"
+          //     : "picture__image picture__image--sold"
+          // }
+          className="picture__image"
         />
-        {!available && <span className="picture__sold">SOLD OUT</span>}
+        {/* {!availableForSale && <span className="picture__sold">SOLD OUT</span>} */}
       </div>
       <h3 className="picture__title">{title}</h3>
       <p
         className="picture__description"
         dangerouslySetInnerHTML={{ __html: description }}
       ></p>
-      {available && (
+      {availableForSale ? (
         <>
           <p className="picture__price">{parsePrice(price)}</p>
           <div className="slide__btns-container slide__btns-container--vertical d-flex mt-1">
@@ -52,28 +56,43 @@ function GalleryPicture({
             </button>
           </div>
         </>
+      ) : (
+        <>
+          <div className="slide__btns-container slide__btns-container--vertical d-flex mt-1">
+            <button
+              className="slide__btn slide__btn--outline btn btn-outline-white btn-lg"
+              onClick={() => handleShowInfo(title)}
+            >
+              RICHIEDI INFO
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
 }
 
-function GalleryPictures({ type }) {
-  const { products, addItemToCheckout, buyNowClick } = useContext(ShopContext);
+function GalleryPictures({ type, products, title }) {
+  const { addItemToCheckout, buyNowClick, handleShowInfo } =
+    useContext(ShopContext);
   return (
     <section
       className={
         type ? `gallery-pictures gallery-pictures--${type}` : "gallery-pictures"
       }
     >
+      <h2 className="text-center text-white mb-4">{title}</h2>
       <div className="container gallery-pictures__container">
-        {products.map((product) => (
-          <GalleryPicture
-            {...product}
-            addItemToCheckout={addItemToCheckout}
-            buyNowClick={buyNowClick}
-            key={uuidv4()}
-          />
-        ))}
+        {products &&
+          products.map((product) => (
+            <GalleryPicture
+              {...product}
+              addItemToCheckout={addItemToCheckout}
+              buyNowClick={buyNowClick}
+              handleShowInfo={handleShowInfo}
+              key={uuidv4()}
+            />
+          ))}
       </div>
     </section>
   );

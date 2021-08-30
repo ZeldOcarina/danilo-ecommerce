@@ -7,10 +7,11 @@ import Carousel from "../../utils/Carousel";
 
 import { ShopContext } from "../../context/ShopContext";
 
-function FeaturedPaintings() {
+function FeaturedPaintings({ products }) {
   const [slides, setSlides] = useState([]);
   const [height, setHeight] = useState(0);
-  const { products, addItemToCheckout, buyNowClick } = useContext(ShopContext);
+  const { addItemToCheckout, buyNowClick, handleShowInfo } =
+    useContext(ShopContext);
 
   // eslint-disable-next-line
   const carousel = new Carousel({ transformAmount: 150 });
@@ -51,6 +52,7 @@ function FeaturedPaintings() {
           descriptionHtml: description,
           url,
           variants,
+          availableForSale,
         },
         i
       ) => {
@@ -64,11 +66,13 @@ function FeaturedPaintings() {
             description={description}
             url={url}
             price={price}
+            available={availableForSale}
             handleLeftClick={carousel.handleLeftClick}
             handleRightClick={carousel.handleRightClick}
             addItemToCheckout={addItemToCheckout}
             productId={productId}
             buyNowClick={buyNowClick}
+            handleShowInfo={handleShowInfo}
           />
         );
 

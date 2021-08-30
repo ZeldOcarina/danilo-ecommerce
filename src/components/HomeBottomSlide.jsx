@@ -10,6 +10,8 @@ function HomeBottomSlide({
   addItemToCheckout,
   productId,
   buyNowClick,
+  available,
+  handleShowInfo,
 }) {
   return (
     <div className="slide bottom-slide">
@@ -21,18 +23,29 @@ function HomeBottomSlide({
       ></p>
       <p className="slide__description text-white">{parsePrice(price)}</p>
       <div className="slide__btns-container d-flex">
-        <button
-          onClick={() => addItemToCheckout(productId, 1)}
-          className="btn btn-lg mt-1 btn-outline-light bottom-slide__buy"
-        >
-          ADD TO CART
-        </button>
-        <button
-          onClick={() => buyNowClick(productId)}
-          className="btn btn-lg mt-1 btn-outline-light bottom-slide__buy"
-        >
-          BUY NOW
-        </button>
+        {available ? (
+          <>
+            <button
+              onClick={() => addItemToCheckout(productId, 1)}
+              className="btn btn-lg mt-1 btn-outline-light bottom-slide__buy"
+            >
+              ADD TO CART
+            </button>
+            <button
+              onClick={() => buyNowClick(productId)}
+              className="btn btn-lg mt-1 btn-outline-light bottom-slide__buy"
+            >
+              BUY NOW
+            </button>
+          </>
+        ) : (
+          <button
+            className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
+            onClick={() => handleShowInfo(title)}
+          >
+            RICHIEDI INFO
+          </button>
+        )}
       </div>
     </div>
   );

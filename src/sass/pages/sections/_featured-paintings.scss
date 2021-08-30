@@ -18,10 +18,9 @@
   &__drawing {
     position: relative;
     transform: translateY(-30%);
-    //width: 35%;
     z-index: 10;
     overflow: visible;
-    width: 40%;
+    width: 30%;
 
     @include respond(laptop) {
       width: 40rem;

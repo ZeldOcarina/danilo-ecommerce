@@ -16,14 +16,14 @@ function HomePage() {
     homeAbout: { title, content, image },
   } = appContent;
 
-  const { products } = useContext(ShopContext);
+  const { products, collections } = useContext(ShopContext);
 
   return (
     <main className="home-page" type="home-page">
       <Hero />
-      <FeaturedPaintings slides={products} />
+      <FeaturedPaintings products={collections.opereOriginali} />
       <HomeAbout />
-      <HomeGallery />
+      <HomeGallery products={products} />
       <TextAndImage {...{ aboutPage: false, title, content, image }} />
       <Gallery />
     </main>

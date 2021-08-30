@@ -8,9 +8,10 @@ import HomeBottomSlide from "../components/HomeBottomSlide";
 
 import { ShopContext } from "../context/ShopContext";
 
-function HomeGallery() {
+function HomeGallery({ products }) {
   const [slides, setSlides] = useState([]);
-  const { products, addItemToCheckout, buyNowClick } = useContext(ShopContext);
+  const { addItemToCheckout, buyNowClick, handleShowInfo } =
+    useContext(ShopContext);
 
   const isLaptop = useMediaQuery({
     query: "only screen and (max-width: 102.18em)",
@@ -53,6 +54,7 @@ function HomeGallery() {
           descriptionHtml: description,
           url,
           variants,
+          availableForSale,
         },
         i
       ) => {
@@ -71,6 +73,8 @@ function HomeGallery() {
             addItemToCheckout={addItemToCheckout}
             productId={productId}
             buyNowClick={buyNowClick}
+            available={availableForSale}
+            handleShowInfo={handleShowInfo}
           />
         );
 

@@ -10,6 +10,7 @@ import GalleryPage from "./pages/GalleryPage";
 import NewsPage from "./pages/NewsPage";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
+import InfoModal from "./components/InfoModal";
 
 import { ShopContext } from "./context/ShopContext";
 
@@ -79,6 +80,7 @@ function App() {
         </Switch>
         <Footer />
         <Cart />
+        <InfoModal />
       </div>
     </AppContext.Provider>
   );

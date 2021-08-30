@@ -8,10 +8,12 @@ function TopSlide({
   description,
   price,
   productId,
+  available,
   handleLeftClick,
   handleRightClick,
   addItemToCheckout,
   buyNowClick,
+  handleShowInfo,
 }) {
   return (
     <div className="slide">
@@ -40,19 +42,30 @@ function TopSlide({
           className="slide__description text-white"
           dangerouslySetInnerHTML={{ __html: description }}
         ></p>
-        <p className="slide__description text-white">{parsePrice(price)}</p>
-        <button
-          className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
-          onClick={() => addItemToCheckout(productId, 1)}
-        >
-          ADD TO CART
-        </button>
-        <button
-          onClick={() => buyNowClick(productId)}
-          className="slide__btn btn btn-primary btn-lg mt-1"
-        >
-          BUY NOW
-        </button>
+        {available ? (
+          <>
+            <p className="slide__description text-white">{parsePrice(price)}</p>
+            <button
+              className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
+              onClick={() => addItemToCheckout(productId, 1)}
+            >
+              ADD TO CART
+            </button>
+            <button
+              onClick={() => buyNowClick(productId)}
+              className="slide__btn btn btn-primary btn-lg mt-1"
+            >
+              BUY NOW
+            </button>
+          </>
+        ) : (
+          <button
+            className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
+            onClick={() => handleShowInfo(title)}
+          >
+            RICHIEDI INFO
+          </button>
+        )}
       </div>
     </div>
   );
