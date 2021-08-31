@@ -1,5 +1,6 @@
-import homeDescriptionImage from "../images/home-description-image.png";
-import galleryPageImage from "../images/gallery-page-image.png";
+import homeDescriptionImage from "../images/home-description-image.jpg";
+import aboutImage from "../images/about-image.jpg";
+import galleryPageImage from "../images/gallery-page-image.jpg";
 
 const content = {
   homeAbout: {
@@ -68,7 +69,7 @@ const content = {
             per cercare la giusta risposta, il giusto punto di vista.
         </p>
         `,
-    image: homeDescriptionImage,
+    image: aboutImage,
   },
   galleryPage: {
     title: "Galleria",
