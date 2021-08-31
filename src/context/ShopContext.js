@@ -41,7 +41,11 @@ class ShopProvider extends Component {
       .then((checkout) => {
         this.setState({ checkout: checkout });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        localStorage.clear();
+        this.createCheckout();
+      });
   };
 
   addItemToCheckout = async (

@@ -15,8 +15,6 @@ function GalleryPage() {
 
   const { collections } = useContext(ShopContext);
 
-  console.log(collections);
-
   return (
     <main className="gallery-page">
       <Seo title="Danilo D'Ignazio | Gallery" />
