@@ -2,6 +2,7 @@ import React from "react";
 
 import TextAndImage from "./sections/TextAndImage";
 import Gallery from "../components/Gallery";
+import Seo from "../components/Seo";
 
 import appContent from "../content/content";
 
@@ -11,6 +12,7 @@ function About() {
   } = appContent;
   return (
     <main className="about-page">
+      <Seo title="Danilo D'Ignazio | About" />
       <TextAndImage aboutPage={true} {...{ title, content, image }} />
       <Gallery />
     </main>

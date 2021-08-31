@@ -6,7 +6,7 @@ import { AppContext } from "../App";
 function GalleryItem({ title: { rendered: title }, image }) {
   return (
     <div className="gallery-item">
-      <h3 className="gallery-item__title">{title}</h3>
+      {/* <h3 className="gallery-item__title">{title}</h3> */}
       <img src={image} alt="" className="gallery-item__image" />
     </div>
   );

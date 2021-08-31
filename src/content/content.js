@@ -39,31 +39,33 @@ const content = {
     title: "Danilo d'Ignazio",
     content: `
         <p className="home-description__text">
-            Danilo D’Ignazio nasce a Giulianova nel 1985 e sin dai primi anni di
-            scuola dimostra un’innata passione per il disegno. La sua passione
-            si traduce in lavoro, quando diventa Graphic designer, sino alla
-            creazione, nel 2012, di un suo Brand "Made in Italy".
+            Danilo D’Ignazio nasce il 17 dicembre 1985 a Giulianova (TE)
+            e fin dai primi anni di scuola dimostra un’innata passione per il disegno
+            che si è tradotta negli anni in uno dei suoi impieghi quello di Graphic Designer,
+            fino ad aver intrapreso definitivamente nel 2012 il suo percorso da Artista.
         </p>
         <p className="home-description__text">
-            Durante un soggiorno a New York, rapito dalla cultura urbana e dalle
-            strade newyorkesi inizia il suo percorso artistico utilizzando un
-            linguaggio "street-pop".
+            Appena tornato dal suo ultimo viaggio in America, attratto dalla cultura urbana
+            delle strade Newyorkesi ed entusiasta dell’espressione colta dagli artisti,
+            presso le più importanti mostre di arte contemporanea, come il Moma di New York,
+            ha avuto la brillante idea di esprimere la propria identità, il suo pensiero
+            di vita nella passione che da sempre è con lui: l’ARTE.
         </p>
 
         <p className="home-description__text">
-            Le sue tele raccontano dialoghi tra linguaggi artistici diversi,
-            D’Ignazio si esprime attraverso la Street-art con l’uso di
-            bombolette spray e tecniche "graffitiche". Nelle sue tele troviamo
-            anche alcuni simboli della Pop-art come la mano di Topolino, come
-            icona di un suo dialogo costante col mondo.
+            Le sue realizzazioni sono un’impronta, un segno indelebile che permettono
+            di comunicare con Stile e Positività la sua Identità;
+            ogni rappresentazione delinea e conduce verso un messaggio, una soluzione
+            o un valore sottolineando talvolta aspetti particolari dell’attuale società
+            e della vita di tutti giorni di ogni singolo individuo.
         </p>
         <p className="home-description__text">
-            Le opere di Danilo D’Ignazio sono inni alla vita, all’amore, alla
-            bellezza, attraverso le quali affronta anche temi sociali.
-        </p>
-        <p className="home-description__text">
-            Le sue opere sono presenti in collezioni private in Italia, Francia
-            e Giappone.
+            Un’ARTE, la sua, molto innovativa.<br />
+            É una collisione di elementi e situazioni che accendono
+            lo spazio in una parete e catturano l’occhio di chi osserva stimolando L’IO.<br/>
+            La sostanza vitale è generare domande,
+            portar a far riflettere e dialogare l’individuo dentro di sé
+            per cercare la giusta risposta, il giusto punto di vista.
         </p>
         `,
     image: homeDescriptionImage,
@@ -72,27 +74,15 @@ const content = {
     title: "Galleria",
     content: `
         <p className="home-description__text">
-            Danilo D’Ignazio nasce a Giulianova nel 1985 e sin dai primi anni di
-            scuola dimostra un’innata passione per il disegno. La sua passione
-            si traduce in lavoro, quando diventa Graphic designer, sino alla
-            creazione, nel 2012, di un suo Brand "Made in Italy".
-        </p>
-        <p className="home-description__text">
-            Durante un soggiorno a New York, rapito dalla cultura urbana e dalle
-            strade newyorkesi inizia il suo percorso artistico utilizzando un
-            linguaggio "street-pop".
-        </p>
-
-        <p className="home-description__text">
-            Le sue tele raccontano dialoghi tra linguaggi artistici diversi,
-            D’Ignazio si esprime attraverso la Street-art con l’uso di
-            bombolette spray e tecniche "graffitiche". Nelle sue tele troviamo
-            anche alcuni simboli della Pop-art come la mano di Topolino, come
-            icona di un suo dialogo costante col mondo.
-        </p>
-        <p className="home-description__text">
-            Le opere di Danilo D’Ignazio sono inni alla vita, all’amore, alla
-            bellezza, attraverso le quali affronta anche temi sociali.
+            “Se dovessi spiegare cosa rappresentano le mie creazioni, direi che sono dei punti
+            di vista, delle decisioni che riflettono una giusta mentalità, una giusta visione.
+            Questo va ad incidere sulla creazione del nostro destino, ma soprattutto su noi
+            stessi. Per poter acquisire tale mindset e raggiungere gli obiettivi scelti, dobbiamo
+            evolverci a livello personale, acquisendo nel tempo i giusti dati e imparando a
+            comprendere la vita, della quale siamo noi i veri protagonisti. Ciò migliora il nostro
+            modo di pensare; quando abbiamo un giusto pensiero, aumentiamo le nostre
+            possibilità di arrivare alla libertà, al successo oltre a far emergere il nostro essere, il
+            nostro vero potenziale”. - Danilo D'Ignazio
         </p>
         `,
     image: galleryPageImage,

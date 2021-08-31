@@ -21,10 +21,10 @@ function HomeBottomSlide({
         className="slide__description text-white"
         dangerouslySetInnerHTML={{ __html: description }}
       ></p>
-      <p className="slide__description text-white">{parsePrice(price)}</p>
-      <div className="slide__btns-container d-flex">
-        {available ? (
-          <>
+      {available ? (
+        <>
+          <p className="slide__description text-white">{parsePrice(price)}</p>
+          <div className="slide__btns-container d-flex">
             <button
               onClick={() => addItemToCheckout(productId, 1)}
               className="btn btn-lg mt-1 btn-outline-light bottom-slide__buy"
@@ -37,16 +37,16 @@ function HomeBottomSlide({
             >
               BUY NOW
             </button>
-          </>
-        ) : (
-          <button
-            className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
-            onClick={() => handleShowInfo(title)}
-          >
-            RICHIEDI INFO
-          </button>
-        )}
-      </div>
+          </div>
+        </>
+      ) : (
+        <button
+          className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
+          onClick={() => handleShowInfo(title)}
+        >
+          RICHIEDI INFO
+        </button>
+      )}
     </div>
   );
 }

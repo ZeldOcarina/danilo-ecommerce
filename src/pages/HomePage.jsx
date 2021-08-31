@@ -6,6 +6,7 @@ import HomeAbout from "./sections/HomeAbout";
 import HomeGallery from "../components/HomeGallery";
 import TextAndImage from "./sections/TextAndImage";
 import Gallery from "../components/Gallery";
+import Seo from "../components/Seo";
 
 import { ShopContext } from "../context/ShopContext";
 
@@ -20,6 +21,7 @@ function HomePage() {
 
   return (
     <main className="home-page" type="home-page">
+      <Seo title="Danilo D'Ignazio | Home Page" />
       <Hero />
       <FeaturedPaintings products={collections.opereOriginali} />
       <HomeAbout />

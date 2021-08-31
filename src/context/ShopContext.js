@@ -29,7 +29,7 @@ class ShopProvider extends Component {
     }
   }
 
-  createCheckout = async ({ isCheckoutPresent }) => {
+  createCheckout = async () => {
     const checkout = await client.checkout.create();
     localStorage.setItem("checkout_id", checkout.id);
     this.setState({ checkout: checkout });
@@ -39,11 +39,7 @@ class ShopProvider extends Component {
     client.checkout
       .fetch(checkoutId)
       .then((checkout) => {
-        if (checkout) {
-          this.setState({ checkout: checkout });
-        } else {
-          this.createCheckout({ isCheckoutPresent: false });
-        }
+        this.setState({ checkout: checkout });
       })
       .catch((error) => console.log(error));
   };
