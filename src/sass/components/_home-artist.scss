@@ -33,6 +33,9 @@
   &__text-container {
     margin-bottom: 50%;
     transform: translateY(50%);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 
     @include respond(laptop) {
       margin-bottom: 0;
@@ -55,6 +58,7 @@
   &__btn {
     padding: 2.5rem 6rem;
     width: max-content;
+    align-self: center;
 
     @include respond(tab-land) {
       padding: 2rem 4rem;
