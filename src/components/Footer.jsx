@@ -22,7 +22,7 @@ function Footer() {
         <div className="footer__container">
           <img
             src={logo}
-            alt="Logo Danilo d'Ignazio"
+            alt="Logo Danilo D'Ignazio"
             className="footer__logo"
           />
           <span className="footer__copy">

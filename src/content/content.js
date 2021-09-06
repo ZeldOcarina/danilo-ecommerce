@@ -4,7 +4,7 @@ import galleryPageImage from "../images/gallery-page-image.jpg";
 
 const content = {
   homeAbout: {
-    title: "Danilo d'Ignazio",
+    title: "Danilo D'Ignazio",
     content: `
         <p class="text-and-image__text">
             Se dovessi spiegare cosa rappresentano le mie creazioni, direi che sono dei giusti punti di vista,
@@ -37,7 +37,7 @@ const content = {
     image: homeDescriptionImage,
   },
   aboutPage: {
-    title: "Danilo d'Ignazio",
+    title: "Danilo D'Ignazio",
     content: `
         <p className="home-description__text">
             Danilo D’Ignazio nasce il 17 dicembre 1985 a Giulianova (TE)
