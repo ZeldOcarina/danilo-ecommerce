@@ -73,7 +73,8 @@ function HomeGallery({ products }) {
             addItemToCheckout={addItemToCheckout}
             productId={productId}
             buyNowClick={buyNowClick}
-            available={availableForSale}
+            //available={availableForSale}
+            available={false}
             handleShowInfo={handleShowInfo}
           />
         );

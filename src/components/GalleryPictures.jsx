@@ -38,36 +38,39 @@ function GalleryPicture({
         className="picture__description"
         dangerouslySetInnerHTML={{ __html: description }}
       ></p>
-      {availableForSale ? (
-        <>
-          <p className="picture__price">{parsePrice(price)}</p>
-          <div className="slide__btns-container slide__btns-container--vertical d-flex mt-1">
-            <button
-              className="slide__btn slide__btn--outline btn btn-outline-white btn-lg"
-              onClick={() => addItemToCheckout(productId, 1)}
-            >
-              ADD TO CART
-            </button>
-            <button
-              className="btn btn-outline-light slide__btn slide__btn--outline picture__btn btn-lg"
-              onClick={() => buyNowClick(productId)}
-            >
-              BUY NOW
-            </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="slide__btns-container slide__btns-container--vertical d-flex mt-1">
-            <button
-              className="slide__btn slide__btn--outline btn btn-outline-white btn-lg"
-              onClick={() => handleShowInfo(title)}
-            >
-              RICHIEDI INFO
-            </button>
-          </div>
-        </>
-      )}
+      {
+        //availableForSale ? (
+        false ? (
+          <>
+            <p className="picture__price">{parsePrice(price)}</p>
+            <div className="slide__btns-container slide__btns-container--vertical d-flex mt-1">
+              <button
+                className="slide__btn slide__btn--outline btn btn-outline-white btn-lg"
+                onClick={() => addItemToCheckout(productId, 1)}
+              >
+                ADD TO CART
+              </button>
+              <button
+                className="btn btn-outline-light slide__btn slide__btn--outline picture__btn btn-lg"
+                onClick={() => buyNowClick(productId)}
+              >
+                BUY NOW
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="slide__btns-container slide__btns-container--vertical d-flex mt-1">
+              <button
+                className="slide__btn slide__btn--outline btn btn-outline-white btn-lg"
+                onClick={() => handleShowInfo(title)}
+              >
+                RICHIEDI INFO
+              </button>
+            </div>
+          </>
+        )
+      }
     </div>
   );
 }

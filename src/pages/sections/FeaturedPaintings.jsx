@@ -66,7 +66,8 @@ function FeaturedPaintings({ products }) {
             description={description}
             url={url}
             price={price}
-            available={availableForSale}
+            //available={availableForSale}
+            available={false}
             handleLeftClick={carousel.handleLeftClick}
             handleRightClick={carousel.handleRightClick}
             addItemToCheckout={addItemToCheckout}
