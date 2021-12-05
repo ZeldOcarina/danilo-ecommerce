@@ -10,6 +10,7 @@ import { ShopContext } from "../../context/ShopContext";
 function FeaturedPaintings({ products }) {
   const [slides, setSlides] = useState([]);
   const [height, setHeight] = useState(0);
+  const [isCarouselSetup, setIsCarouselSetup] = useState(false);
 
   const { handleShowInfo } = useContext(ShopContext);
 
@@ -25,8 +26,11 @@ function FeaturedPaintings({ products }) {
   });
 
   useEffect(() => {
-    carousel.setupSlider();
     setSlides([...products]);
+  }, [products]);
+
+  useEffect(() => {
+    carousel.setupSlider();
 
     if (!isPhonePort) return;
 
@@ -40,8 +44,7 @@ function FeaturedPaintings({ products }) {
       }
       setHeight(maxHeight + 100);
     }
-    // eslint-disable-next-line
-  }, [isPhonePort, products]);
+  }, [isPhonePort, carousel, products]);
 
   function buildSlides() {
     try {
