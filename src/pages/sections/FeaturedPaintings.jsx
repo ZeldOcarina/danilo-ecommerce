@@ -10,7 +10,6 @@ import { ShopContext } from "../../context/ShopContext";
 function FeaturedPaintings({ products }) {
   const [slides, setSlides] = useState([]);
   const [height, setHeight] = useState(0);
-  const [isCarouselSetup, setIsCarouselSetup] = useState(false);
 
   const { handleShowInfo } = useContext(ShopContext);
 
