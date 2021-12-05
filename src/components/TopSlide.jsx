@@ -1,18 +1,11 @@
 import React from "react";
 
-import { parsePrice } from "../utils/utils";
-
 function TopSlide({
   image,
   title,
   description,
-  price,
-  productId,
-  available,
   handleLeftClick,
   handleRightClick,
-  addItemToCheckout,
-  buyNowClick,
   handleShowInfo,
 }) {
   return (
@@ -42,30 +35,12 @@ function TopSlide({
           className="slide__description text-white"
           dangerouslySetInnerHTML={{ __html: description }}
         ></p>
-        {available ? (
-          <>
-            <p className="slide__description text-white">{parsePrice(price)}</p>
-            <button
-              className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
-              onClick={() => addItemToCheckout(productId, 1)}
-            >
-              ADD TO CART
-            </button>
-            <button
-              onClick={() => buyNowClick(productId)}
-              className="slide__btn btn btn-primary btn-lg mt-1"
-            >
-              BUY NOW
-            </button>
-          </>
-        ) : (
-          <button
-            className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
-            onClick={() => handleShowInfo(title)}
-          >
-            RICHIEDI INFO
-          </button>
-        )}
+        <button
+          className="slide__btn slide__btn--outline btn btn-outline-white btn-lg mt-1 me-md-3"
+          onClick={() => handleShowInfo(title)}
+        >
+          RICHIEDI INFO
+        </button>
       </div>
     </div>
   );

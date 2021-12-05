@@ -10,14 +10,13 @@ import { ShopContext } from "../../context/ShopContext";
 function FeaturedPaintings({ products }) {
   const [slides, setSlides] = useState([]);
   const [height, setHeight] = useState(0);
-  const { addItemToCheckout, buyNowClick, handleShowInfo } =
-    useContext(ShopContext);
+
+  const { handleShowInfo } = useContext(ShopContext);
 
   // eslint-disable-next-line
   const carousel = new Carousel({ transformAmount: 150 });
 
   carousel.slider = React.createRef(null);
-
   carousel.slidesData = slides;
   carousel.maxSlide = slides?.length;
 
@@ -27,7 +26,7 @@ function FeaturedPaintings({ products }) {
 
   useEffect(() => {
     carousel.setupSlider();
-    setSlides(products);
+    setSlides([...products]);
 
     if (!isPhonePort) return;
 
@@ -41,45 +40,38 @@ function FeaturedPaintings({ products }) {
       }
       setHeight(maxHeight + 100);
     }
-  }, [products, carousel, isPhonePort]);
+    // eslint-disable-next-line
+  }, [isPhonePort, products]);
 
   function buildSlides() {
-    return carousel.slidesData?.map(
-      (
-        {
-          images: [{ src: image }],
-          title,
-          descriptionHtml: description,
-          url,
-          variants,
-          availableForSale,
-        },
-        i
-      ) => {
-        const price = variants[0].price;
-        const productId = variants[0].id;
-        const slideEl = (
-          <TopSlide
-            key={i}
-            image={image}
-            title={title}
-            description={description}
-            url={url}
-            price={price}
-            //available={availableForSale}
-            available={false}
-            handleLeftClick={carousel.handleLeftClick}
-            handleRightClick={carousel.handleRightClick}
-            addItemToCheckout={addItemToCheckout}
-            productId={productId}
-            buyNowClick={buyNowClick}
-            handleShowInfo={handleShowInfo}
-          />
-        );
+    try {
+      return carousel.slidesData?.map(
+        ({
+          id,
+          image,
+          title: { rendered: title },
+          content: { rendered: description },
+        }) => {
+          const slideEl = (
+            <TopSlide
+              key={id}
+              image={image}
+              title={title}
+              description={description}
+              available={false}
+              handleLeftClick={carousel.handleLeftClick}
+              handleRightClick={carousel.handleRightClick}
+              handleShowInfo={handleShowInfo}
+            />
+          );
 
-        return slideEl;
-      }
-    );
+          return slideEl;
+        }
+      );
+    } catch (err) {
+      console.log(carousel.slidesData);
+      console.log(err);
+    }
   }
 
   return (

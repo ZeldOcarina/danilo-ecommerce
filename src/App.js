@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { Route, Switch, useLocation } from "react-router-dom";
@@ -12,31 +12,30 @@ import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import InfoModal from "./components/InfoModal";
 
-import { ShopContext } from "./context/ShopContext";
-
 export const AppContext = React.createContext({});
 
 function App() {
   const [appData, setAppData] = useState({});
   const [news, setNews] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
+  const [products, setProducts] = useState([]);
   const location = useLocation();
-
-  const { fetchAllProducts } = useContext(ShopContext);
 
   useEffect(() => {
     async function loadAppData() {
       const BASE_URL = "https://danilo-admin.monarchy.io/wp-json/wp/v2";
       const newsPromise = axios.get(`${BASE_URL}/news?_embed`);
       const galleryPromise = axios.get(`${BASE_URL}/gallery-images?_embed`);
+      const productsPromise = axios.get(
+        `${BASE_URL}/products?per_page=100&_embed`
+      );
 
-      const [newsResponse, galleryResponse] = await Promise.all([
-        newsPromise,
-        galleryPromise,
-      ]);
+      const [newsResponse, galleryResponse, productsResponse] =
+        await Promise.all([newsPromise, galleryPromise, productsPromise]);
 
       const newsArray = newsResponse.data;
       const galleryArray = galleryResponse.data;
+      const productsArray = productsResponse.data;
 
       for (let newPost of newsArray) {
         newPost.image =
@@ -56,17 +55,31 @@ function App() {
           : "Some alt text";
       }
 
+      for (let productPost of productsArray) {
+        try {
+          productPost.image =
+            productPost._embedded["wp:featuredmedia"][0].source_url;
+          productPost.alt = productPost._embedded["wp:featuredmedia"][0]
+            .alt_text
+            ? productPost._embedded["wp:featuredmedia"][0].alt_text
+            : "Some alt text";
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
       setNews(newsArray);
       setGalleryImages(galleryArray);
-
-      fetchAllProducts();
+      setProducts(productsArray);
     }
 
     loadAppData();
-  }, [fetchAllProducts]);
+  }, []);
 
   return (
-    <AppContext.Provider value={{ appData, setAppData, news, galleryImages }}>
+    <AppContext.Provider
+      value={{ appData, setAppData, news, galleryImages, products }}
+    >
       <div className="App">
         <NavBar
           className={location.pathname === "/" ? "navbar--home" : ""}

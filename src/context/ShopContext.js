@@ -21,13 +21,13 @@ class ShopProvider extends Component {
     infoOperaTitle: "",
   };
 
-  componentDidMount() {
-    if (localStorage.checkout_id) {
-      this.fetchCheckout(localStorage.checkout_id);
-    } else {
-      this.createCheckout();
-    }
-  }
+  // componentDidMount() {
+  //   if (localStorage.checkout_id) {
+  //     this.fetchCheckout(localStorage.checkout_id);
+  //   } else {
+  //     this.createCheckout();
+  //   }
+  // }
 
   createCheckout = async () => {
     const checkout = await client.checkout.create();

@@ -10,8 +10,7 @@ import { ShopContext } from "../context/ShopContext";
 
 function HomeGallery({ products }) {
   const [slides, setSlides] = useState([]);
-  const { addItemToCheckout, buyNowClick, handleShowInfo } =
-    useContext(ShopContext);
+  const { handleShowInfo } = useContext(ShopContext);
 
   const isLaptop = useMediaQuery({
     query: "only screen and (max-width: 102.18em)",
@@ -47,34 +46,20 @@ function HomeGallery({ products }) {
 
   function buildSlides() {
     return carousel.slidesData?.map(
-      (
-        {
-          images: [{ src: image }],
-          title,
-          descriptionHtml: description,
-          url,
-          variants,
-          availableForSale,
-        },
-        i
-      ) => {
-        const price = variants[0].price;
-        const productId = variants[0].id;
+      ({
+        id,
+        image,
+        title: { rendered: title },
+        content: { rendered: description },
+      }) => {
         const slideEl = (
           <HomeBottomSlide
-            key={i}
+            key={id}
             image={image}
             title={title}
             description={description}
-            url={url}
-            price={price}
             handleLeftClick={carousel.handleLeftClick}
             handleRightClick={carousel.handleRightClick}
-            addItemToCheckout={addItemToCheckout}
-            productId={productId}
-            buyNowClick={buyNowClick}
-            //available={availableForSale}
-            available={false}
             handleShowInfo={handleShowInfo}
           />
         );
