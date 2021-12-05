@@ -25,7 +25,9 @@ function FeaturedPaintings({ products }) {
   });
 
   useEffect(() => {
-    setSlides([...products]);
+    const inEvidenza = products.filter((product) => product.acf["In Evidenza"]);
+    console.log(inEvidenza);
+    setSlides([...inEvidenza]);
   }, [products]);
 
   useEffect(() => {
