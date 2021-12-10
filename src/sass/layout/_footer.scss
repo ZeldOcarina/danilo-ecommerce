@@ -15,6 +15,19 @@
     }
   }
 
+  &__terms {
+    text-align: center;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 2rem;
+
+    a {
+      color: #f3f3f3;
+      font-weight: bold;
+    }
+  }
+
   &__icons-container {
     display: flex;
     justify-content: center;

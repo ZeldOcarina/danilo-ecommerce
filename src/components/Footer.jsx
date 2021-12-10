@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import logo from "../images/logo/logo.svg";
 
@@ -8,6 +9,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
+        <span className="footer__terms">
+          <Link to="/sales-terms">Termini e Condizioni</Link>
+        </span>
         <div className="footer__icons-container">
           <a className="icon" href="https://www.facebook.com/danilodigna/">
             <FaFacebookF className="footer__icon" />

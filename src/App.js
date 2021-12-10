@@ -8,11 +8,13 @@ import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import GalleryPage from "./pages/GalleryPage";
 import NewsPage from "./pages/NewsPage";
+import SalesTermsPage from "./pages/SalesTermsPage";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import InfoModal from "./components/InfoModal";
 
 export const AppContext = React.createContext({});
+const BASE_URL = "https://danilo-admin.monarchy.io/wp-json/wp/v2";
 
 function App() {
   const [appData, setAppData] = useState({});
@@ -23,7 +25,6 @@ function App() {
 
   useEffect(() => {
     async function loadAppData() {
-      const BASE_URL = "https://danilo-admin.monarchy.io/wp-json/wp/v2";
       const newsPromise = axios.get(`${BASE_URL}/news?_embed`);
       const galleryPromise = axios.get(`${BASE_URL}/gallery-images?_embed`);
       const productsPromise = axios.get(
@@ -90,6 +91,11 @@ function App() {
           <Route path="/about" component={About} exact />
           <Route path="/gallery" component={GalleryPage} exact />
           <Route path="/news" component={NewsPage} exact />
+          <Route
+            path="/sales-terms"
+            render={() => <SalesTermsPage baseUrl={BASE_URL} />}
+            exact
+          />
         </Switch>
         <Footer />
         <Cart />
